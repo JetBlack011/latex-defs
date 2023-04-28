@@ -1,0 +1,138 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{Homework}
+
+\usepackage[margin=0.95in]{geometry}
+\usepackage[english]{babel}
+\usepackage{import}
+\usepackage{pdfpages}
+\usepackage{transparent}
+\usepackage{xcolor}
+\usepackage{etoolbox}
+\usepackage{mathtools,amssymb,amsthm,cancel}
+\usepackage{tikz,pgfplots}
+\usetikzlibrary{shapes}
+\usepackage{hyperref}
+\usepackage{enumitem}
+\usepackage{setspace,titlesec}
+\usepackage{chngcntr}
+\usepackage{blindtext}
+\usepackage{multicol}
+\usepackage{hyperref}
+\pgfplotsset{compat=1.15}
+
+\hypersetup{
+    colorlinks,
+    citecolor=black,
+    filecolor=black,
+    linkcolor=black,
+    urlcolor=black
+}
+
+% For including inkscape figures
+\newcommand{\incfig}[2][1]{%
+    \def\svgwidth{#1\columnwidth}
+    \import{./figures/}{#2.pdf_tex}
+}
+
+\pdfsuppresswarningpagegroup=1
+
+\newcommand{\ruler}{\rule{5in}{0.4pt}}
+
+\setlength\parskip{2pt}
+\onehalfspacing
+% \setlength{\parindent}{0in}
+
+% Use \nindent to gracefully remove paragraph indents
+%\newcommand{\nindent}{\setlength{\parindent}{0in}}
+% \setlength{\parskip}{1em}
+% \setlength{\parindent}{0in}
+
+% Slightly decrease section spacing
+% \titlespacing*{\section}{0pt}{2ex}{1ex}
+
+% Make sure math can be displayed over multiple pages
+% \allowdisplaybreaks
+
+\setlist{  
+	listparindent=\parindent,
+}
+\setlist[enumerate]{itemsep=\parskip}
+\setlist[enumerate,1]{label=(\alph*),ref=\alph*}
+
+\usepackage{common-math}
+
+% Adds all theorems to the TOC
+\newtheoremstyle{toc}
+    {}
+    {}
+    %{\it}
+    {}
+    {}
+    {\bf}
+    {}
+    { }
+    {\thmname{#1}\thmnumber{ #2}.
+    \phantomsection
+    %\thmnote{: #3.\addcontentsline{toc}{subsubsection}{{\it#1}: #3}} }
+    \thmnote{#3.}
+    \phantomsection}
+\theoremstyle{toc}
+
+\newcounter{problem}
+\newenvironment{problem}[1][Problem]{
+    \refstepcounter{problem}
+    %\addcontentsline{toc}{subsubsection}{Problem \theproblem}
+    \begin{trivlist}
+    \item[\hskip\labelsep {\bfseries #1}\hskip \labelsep {\bfseries \theproblem. \hskip\labelsep}]
+    %\itshape $ $
+	$ $
+}{\end{trivlist}}
+% \counterwithin{problem}{section}
+\providecommand*\problemautorefname{Problem}
+
+\newenvironment{problem*}[1][Problem]{
+    \begin{trivlist}
+    \item[\hskip \labelsep {\bfseries #1}\hskip \labelsep ]
+}{\end{trivlist}}
+
+\newcounter{exercise}
+\newenvironment{exercise}[1][Exercise]{
+    \refstepcounter{exercise}
+    %\addcontentsline{toc}{subsubsection}{Exercise \theexercise}
+    \begin{trivlist}
+    \item[\hskip\labelsep {\bfseries #1}\hskip \labelsep {\bfseries \theexercise. \hskip\labelsep}]
+}{\end{trivlist}}
+\counterwithin{exercise}{section}
+\providecommand*\exerciseautorefname{Exercise}
+
+\newcounter{example}[section]
+\newenvironment{example}[1][Example]{
+    \refstepcounter{example}
+    %\addcontentsline{toc}{subsubsection}{Example \theexample}
+    \begin{trivlist}
+    \item[\hskip\labelsep {\bfseries #1}\hskip \labelsep] %{\bfseries \theexample}]
+}{\end{trivlist}}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem*{theorem*}{Theorem}
+\providecommand*\theoremautorefname{Theorem}
+
+\newtheorem*{definition}{Definition}
+\providecommand*\definitionautorefname{Definition}
+
+\newtheorem{claim}{Claim}[section]
+\providecommand*\claimautorefname{Claim}
+
+\newtheorem{proposition}{Proposition}[section]
+\providecommand*\propositionautorefname{Proposition}
+
+\newtheorem{corollary}{Corollary}[theorem]
+\providecommand*\corollaryautorefname{Corollary}
+
+\newtheorem{lemma}{Lemma}[theorem]
+\newtheorem*{lemma*}{Lemma}
+\providecommand*\lemmaautorefname{Lemma}
+
+\AtBeginEnvironment{proof}{\renewcommand{\qedsymbol}{$\square$}}
+\newenvironment{solution*}{\begin{proof}[Solution] \renewcommand{\qedsymbol}{}$ $}{\end{proof}}
+\newenvironment{solution}{\begin{proof}[Solution]$ $}{\end{proof}}
