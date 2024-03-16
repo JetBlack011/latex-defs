@@ -9,7 +9,19 @@
 \usepackage{tikz-cd}
 \usepackage{forest}
 \usepackage{algorithm}
+\usepackage{accents}
 \usepackage[noend]{algpseudocode}
+
+\usepackage{import}
+\usepackage{pdfpages}
+\usepackage{xcolor}
+
+\newcommand{\incfig}[2][1]{%
+    \def\svgwidth{#1\columnwidth}
+    \import{./figures/}{#2.pdf_tex}
+}
+
+\pdfsuppresswarningpagegroup=1
 
 % Common sets
 \DeclareMathAlphabet{\mymathbb}{U}{BOONDOX-ds}{m}{n}
@@ -211,6 +223,7 @@
 \makeatother
 
 % Common categories
+\DeclareMathOperator{\codim}{codim}
 \DeclareMathOperator{\Ab}{Ab}
 \DeclareMathOperator{\Grp}{Grp}
 \DeclareMathOperator{\Sets}{Set}
@@ -230,7 +243,7 @@
 \DeclareMathOperator{\Sym}{Sym}
 \DeclareMathOperator{\Lie}{Lie}
 \RedeclareMathOperator{\O}{O}
-%\RedeclareMathOperator{\int}{int}
+\RedeclareMathOperator{\int}{Int}
 \DeclareMathOperator{\tr}{tr}
 \DeclareMathOperator{\pr}{pr}
 \DeclareMathOperator{\supp}{supp}

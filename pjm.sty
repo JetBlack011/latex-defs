@@ -1,5 +1,5 @@
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesPackage{Homework}
+\ProvidesPackage{PJM}
 
 \usepackage[margin=1.25in]{geometry}
 \usepackage[english]{babel}
@@ -13,7 +13,7 @@
 \usetikzlibrary{shapes}
 \usepackage{hyperref}
 \usepackage{enumitem}
-\usepackage{setspace,titlesec}
+%\usepackage{setspace,titlesec}
 \usepackage{chngcntr}
 \usepackage{blindtext}
 \usepackage{multicol}
@@ -30,7 +30,7 @@
 \newcommand{\ruler}{\rule{5in}{0.4pt}}
 
 %\setlength\parskip{2pt}
-\setstretch{1.25}
+%\setstretch{1.25}
 % \setlength{\parindent}{0in}
 
 % Use \nindent to gracefully remove paragraph indents
@@ -44,57 +44,30 @@
 % Make sure math can be displayed over multiple pages
 % \allowdisplaybreaks
 
-\setlist{  
-	listparindent=\parindent,
-}
-\setlist[enumerate]{itemsep=\parskip}
-\setlist[enumerate,1]{label=(\arabic*),ref=\arabic*}
+%\setlist{  
+%	listparindent=\parindent,
+%}
+%\setlist[enumerate]{itemsep=\parskip}
+%\setlist[enumerate,1]{label=(\arabic*),ref=\arabic*}
 
 \usepackage{common-math}
 
 % Adds all theorems to the TOC
-\newtheoremstyle{toc}
-    {}
-    {}
-    %{\it}
-    {}
-    {}
-    {\bf}
-    {}
-    { }
-    {\thmname{#1}\thmnumber{ #2}.
-    \phantomsection
-    %\thmnote{: #3.\addcontentsline{toc}{subsubsection}{{\it#1}: #3}} }
-    \thmnote{#3.}
-    \phantomsection}
-\theoremstyle{toc}
-
-\newcounter{problem}
-\newenvironment{problem}[1][Problem]{
-    \refstepcounter{problem}
-    %\addcontentsline{toc}{subsubsection}{Problem \theproblem}
-    \begin{trivlist}
-    \item[\hskip\labelsep {\bfseries #1}\hskip \labelsep {\bfseries \theproblem. \hskip\labelsep}]
-    %\itshape $ $
-	$ $
-}{\end{trivlist}}
-% \counterwithin{problem}{section}
-\providecommand*\problemautorefname{Problem}
-
-\newenvironment{problem*}[1][Problem]{
-    \begin{trivlist}
-    \item[\hskip \labelsep {\bfseries #1}\hskip \labelsep ]
-}{\end{trivlist}}
-
-\newcounter{exercise}
-\newenvironment{exercise}[1][Exercise]{
-    \refstepcounter{exercise}
-    %\addcontentsline{toc}{subsubsection}{Exercise \theexercise}
-    \begin{trivlist}
-    \item[\hskip\labelsep {\bfseries #1}\hskip \labelsep {\bfseries \theexercise. \hskip\labelsep}]
-}{\end{trivlist}}
-\counterwithin{exercise}{section}
-\providecommand*\exerciseautorefname{Exercise}
+%\newtheoremstyle{toc}
+%    {}
+%    {}
+%    %{\it}
+%    {}
+%    {}
+%    {\bf}
+%    {}
+%    { }
+%    {\thmname{#1}\thmnumber{ #2}.
+%    \phantomsection
+%    %\thmnote{: #3.\addcontentsline{toc}{subsubsection}{{\it#1}: #3}} }
+%    \thmnote{#3.}
+%    \phantomsection}
+%\theoremstyle{toc}
 
 \newcounter{example}[section]
 \newenvironment{example}[1][Example]{
