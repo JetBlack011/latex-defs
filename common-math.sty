@@ -34,6 +34,7 @@
 \newcommand{\N}{\mathbb{N}}
 \newcommand{\Q}{\mathbb{Q}}
 \newcommand{\C}{\mathbb{C}}
+\newcommand{\Hbb}{\mathbb{H}}
 % Cal
 \newcommand{\calA}{\mathcal{A}}  
 \newcommand{\calB}{\mathcal{B}}  
@@ -142,13 +143,14 @@
 \newcommand{\frakx}{\mathfrak{x}}
 \newcommand{\fraky}{\mathfrak{y}}
 \newcommand{\frakz}{\mathfrak{z}}
-\newcommand{\F}{\mathscr{F}}
+\newcommand{\Fscr}{\mathscr{F}}
 \newcommand{\At}{\mathscr{A}}
 \newcommand{\G}{\mathscr{G}}
 \newcommand{\RP}{\operatorname{\mathbb{R}P}}
 \newcommand{\CP}{\operatorname{\mathbb{C}P}}
+\newcommand{\HP}{\operatorname{\mathbb{H}P}}
 \renewcommand{\Z}{\mathbb{Z}}
-\newcommand{\Fbb}{\mathbb{F}} 
+\newcommand{\F}{\mathbb{F}} 
 \newcommand{\0}{\mymathbb{0}}
 \newcommand{\1}{\mymathbb{1}}
 % \renewcommand{\P}{\mathcal{P}}
@@ -167,6 +169,7 @@
 \newcommand{\gf}{\mathfrak{g}}
 \newcommand{\hf}{\mathfrak{h}}
 \newcommand{\ZHS}{\Z HS}
+\newcommand{\bd}{\partial}
 
 \newcommand{\rightarrowdbl}{\rightarrow\mathrel{\mkern-14mu}\rightarrow}
 
@@ -205,6 +208,8 @@
 \newcommand{\iso}{\cong}
 \newcommand{\homeo}{\approx_{\homeomorphism}}
 
+\DeclareMathOperator*{\esssup}{ess\,sup}
+
 \makeatletter
 \newcommand\RedeclareMathOperator{%
   \@ifstar{\def\rmo@s{m}\rmo@redeclare}{\def\rmo@s{o}\rmo@redeclare}%
@@ -223,6 +228,7 @@
 \makeatother
 
 % Common categories
+\DeclareMathOperator{\coker}{coker}
 \DeclareMathOperator{\codim}{codim}
 \DeclareMathOperator{\Ab}{Ab}
 \DeclareMathOperator{\Grp}{Grp}
@@ -243,15 +249,20 @@
 \DeclareMathOperator{\Sym}{Sym}
 \DeclareMathOperator{\Lie}{Lie}
 \RedeclareMathOperator{\O}{O}
-\RedeclareMathOperator{\int}{Int}
+\RedeclareMathOperator{\Re}{Re}
+%\RedeclareMathOperator{\int}{int}
+\DeclareMathOperator{\Int}{int}
 \DeclareMathOperator{\tr}{tr}
 \DeclareMathOperator{\pr}{pr}
 \DeclareMathOperator{\supp}{supp}
 \DeclareMathOperator{\Gal}{Gal}
 \DeclareMathOperator{\St}{St}
 \DeclareMathOperator{\SO}{SO}
+\DeclareMathOperator{\BSO}{BSO}
+\DeclareMathOperator{\ESO}{ESO}
 \DeclareMathOperator{\PSO}{PSO}
 \DeclareMathOperator{\PO}{PO}
+\DeclareMathOperator{\SU}{SU}
 \DeclareMathOperator{\adj}{adj}
 \DeclareMathOperator{\crit}{crit}
 \DeclareMathOperator{\homeomorphism}{homeo}
@@ -265,7 +276,7 @@
 \DeclareMathOperator{\End}{End}
 \DeclareMathOperator{\im}{im}
 \DeclareMathOperator{\Ext}{Ext}
-\DeclareMathOperator{\id}{Id}
+\DeclareMathOperator{\id}{id}
 \DeclareMathOperator{\sol}{Sol}
 \DeclareMathOperator{\Spam}{Span}
 \DeclareMathOperator{\Bil}{Bil}
@@ -280,6 +291,7 @@
 \DeclareMathOperator{\orb}{orb}
 \DeclareMathOperator{\diam}{diam}
 \DeclareMathOperator{\Char}{char}
+\DeclareMathOperator{\Orth}{O}
 \DeclareMathOperator{\GL}{GL}
 \DeclareMathOperator{\SL}{SL}
 \DeclareMathOperator{\U}{U}
