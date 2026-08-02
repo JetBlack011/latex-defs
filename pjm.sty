@@ -71,38 +71,48 @@
     \item[\hskip\labelsep {\bfseries #1.}\hskip \labelsep] %{\bfseries \theexample}]
 }{\end{trivlist}}
 
+% All theorem-like environments below share a single running counter (the
+% [theorem] argument), so that e.g. Definition/Problem/Lemma are numbered in
+% the order they appear (Definition 3.1, Problem 3.2, Lemma 3.3, ...)
+% instead of each environment keeping its own independent count. Only
+% `theorem` itself needs \numberwithin{theorem}{section}; every environment
+% sharing its counter inherits that section-scoping automatically.
 \newtheorem{theorem}{Theorem}
 \newtheorem*{theorem*}{Theorem}
 \providecommand*\theoremautorefname{Theorem}
 \numberwithin{theorem}{section}
 
-\newtheorem{claim}{Claim}[section]
+\newtheorem{claim}[theorem]{Claim}
 \providecommand*\claimautorefname{Claim}
 
-\newtheorem{proposition}{Proposition}[section]
+\newtheorem{proposition}[theorem]{Proposition}
 \newtheorem*{proposition*}{Proposition}
 \providecommand*\propositionautorefname{Proposition}
 
-\newtheorem{corollary}{Corollary}[theorem]
+\newtheorem{corollary}[theorem]{Corollary}
 \providecommand*\corollaryautorefname{Corollary}
-\numberwithin{corollary}{section}
 
-\newtheorem{lemma}{Lemma}
+\newtheorem{lemma}[theorem]{Lemma}
 \newtheorem*{lemma*}{Lemma}
 \providecommand*\lemmaautorefname{Lemma}
-\numberwithin{lemma}{section}
 
-\newtheorem{question}{Question}
+\newtheorem{question}[theorem]{Question}
 \newtheorem*{question*}{Question}
 \providecommand*\lemmaautorefname{Question}
-\numberwithin{question}{section}
+
+\newtheorem{problem}[theorem]{Problem}
+\newtheorem*{problem*}{Problem}
+\providecommand*\lemmaautorefname{Problem}
 
 \AtBeginEnvironment{proof}{\renewcommand{\qedsymbol}{$\square$}}
 \newenvironment{solution*}{\begin{proof}[Solution] \renewcommand{\qedsymbol}{}$ $}{\end{proof}}
 \newenvironment{solution}{\begin{proof}[Solution]$ $}{\end{proof}}
 
 \theoremstyle{def}
-\newtheorem{definition}{Definition}
+\newtheorem{definition}[theorem]{Definition}
 \newtheorem*{definition*}{Definition}
 \providecommand*\definitionautorefname{Definition}
-\numberwithin{definition}{section}
+
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\providecommand*\remarkautorefname{Remark}
